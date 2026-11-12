@@ -10,18 +10,14 @@ public class Gong {
         int x= sc.nextInt();
         System.out.println("输入y");
         int y= sc.nextInt();
-        int gcd=1;
-        for(int a=Math.min(x,y);a>0;a--)
+        int b=x*y;
+        while(y!=0)
         {
-            if (x%a==0 && y%a==0) {
-                System.out.println("找到的最大公约数为" + a);
-                gcd=a;
-                break;
-            }
+            int a=x%y;
+            x=y;
+            y=a;
         }
-        int n=x*y/gcd;
-        System.out.println("最小公倍数为"+n);
-
-
+        System.out.println("最大公约数是"+x);
+        System.out.println("最小公倍数是"+b/x);
     }
 }
